@@ -10,7 +10,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    
+
     <!--
         This grid acts as a root panel for the page that defines two rows:
         * Row 0 contains the back button and page title
@@ -41,6 +41,18 @@
                         AutomationProperties.ItemType="Navigation Button"/>
             <TextBlock x:Name="pageTitle" Text="Add Wine" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
+            <AppBarButton Grid.Column="1" HorizontalAlignment="Left" Label="Save" Margin="1122,47,0,0" VerticalAlignment="Top" Icon="Save"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Margin="1,1,0,0" Grid.Row="1" VerticalAlignment="Top" Height="625" RenderTransformOrigin="0.5,0.5" Width="1365">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="457*"/>
+                <RowDefinition Height="42*"/>
+                <RowDefinition Height="43"/>
+                <RowDefinition Height="83*"/>
+            </Grid.RowDefinitions>
+            <Grid.RenderTransform>
+                <CompositeTransform ScaleY="-1" ScaleX="-1"/>
+            </Grid.RenderTransform>
         </Grid>
     </Grid>
 </Page>

@@ -16,6 +16,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=234227
+using WineCellar.Model;
 
 namespace WineCellar
 {
@@ -24,6 +25,8 @@ namespace WineCellar
     /// </summary>
     sealed partial class App : Application
     {
+        public static string DBPath = string.Empty; 
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -65,6 +68,18 @@ namespace WineCellar
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
                     //TODO: Load state from previously suspended application
+                }
+                // Get a reference to the SQLite database 
+                DBPath = Path.Combine(
+                    Windows.Storage.ApplicationData.Current.RoamingFolder.Path, "wine-cellar.s3db");
+                // Initialize the database if necessary 
+                using (var db = new SQLite.SQLiteConnection(DBPath))
+                {
+                    // Create the tables if they don't exist 
+                    db.CreateTable<Grape>();
+                    db.CreateTable<WineBottle>();
+                    db.CreateTable<Cellar>();
+                    db.CreateTable<CellarLine>();
                 }
 
                 // Place the frame in the current Window

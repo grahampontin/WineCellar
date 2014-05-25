@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
+using WineCellar.Model;
 
 namespace WineCellar
 {
@@ -102,5 +103,14 @@ namespace WineCellar
         }
 
         #endregion
+
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            using (var db = new SQLite.SQLiteConnection(App.DBPath))
+            {
+                db.Insert(new WineBottle() {Name = NameTextBox.Text});
+            }
+
+        }
     }
 }

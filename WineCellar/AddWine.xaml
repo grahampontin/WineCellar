@@ -41,18 +41,22 @@
                         AutomationProperties.ItemType="Navigation Button"/>
             <TextBlock x:Name="pageTitle" Text="Add Wine" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
-            <AppBarButton Grid.Column="1" HorizontalAlignment="Left" Label="Save" Margin="1122,47,0,0" VerticalAlignment="Top" Icon="Save"/>
+            <AppBarButton Grid.Column="1" HorizontalAlignment="Left" Label="Save" Margin="1122,47,0,0" VerticalAlignment="Top" Icon="Save" Click="SaveButton_Click"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Margin="1,1,0,0" Grid.Row="1" VerticalAlignment="Top" Height="625" RenderTransformOrigin="0.5,0.5" Width="1365">
+        <Grid HorizontalAlignment="Left" Margin="82,0,0,0" Grid.Row="1" VerticalAlignment="Top" Height="625" RenderTransformOrigin="0.5,0.5" Width="1365">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="227*"/>
+                <ColumnDefinition Width="228*"/>
+            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="457*"/>
-                <RowDefinition Height="42*"/>
-                <RowDefinition Height="43"/>
-                <RowDefinition Height="83*"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="17*"/>
             </Grid.RowDefinitions>
-            <Grid.RenderTransform>
-                <CompositeTransform ScaleY="-1" ScaleX="-1"/>
-            </Grid.RenderTransform>
+            <StackPanel HorizontalAlignment="Left" Height="63" Margin="10,0,0,0" VerticalAlignment="Top" Width="664" Orientation="Horizontal" >
+                <TextBlock TextWrapping="Wrap" Text="Name" Style="{StaticResource SubheaderTextBlockStyle}" VerticalAlignment="Center"/>
+                <TextBox x:Name="NameTextBox" TextWrapping="Wrap" Margin="20,10,0,10" Width="534" FontSize="18"/>
+            </StackPanel>
         </Grid>
     </Grid>
 </Page>

@@ -53,9 +53,14 @@
                 <RowDefinition Height="100"/>
                 <RowDefinition Height="17*"/>
             </Grid.RowDefinitions>
-            <StackPanel HorizontalAlignment="Left" Height="63" Margin="10,0,0,0" VerticalAlignment="Top" Width="664" Orientation="Horizontal" >
+            <StackPanel HorizontalAlignment="Left" Height="63" Margin="10,0,0,0" Grid.Row="0" VerticalAlignment="Top" Width="664" Orientation="Horizontal" >
                 <TextBlock TextWrapping="Wrap" Text="Name" Style="{StaticResource SubheaderTextBlockStyle}" VerticalAlignment="Center"/>
-                <TextBox x:Name="NameTextBox" TextWrapping="Wrap" Margin="20,10,0,10" Width="534" FontSize="18"/>
+                <TextBox x:Name="NameTextBox" TextWrapping="Wrap" Margin="20,10,0,10" Width="572" FontSize="18"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" Height="100" Margin="10,0,0,0" Grid.Row="1" VerticalAlignment="Top" Orientation="Horizontal">
+                <TextBlock TextWrapping="Wrap" Text="Cellar" Style="{StaticResource SubheaderTextBlockStyle}" VerticalAlignment="Center"/>
+                <ComboBox HorizontalAlignment="Left" Margin="20,34,0,34" VerticalAlignment="Center" Width="576" />
+
             </StackPanel>
         </Grid>
     </Grid>

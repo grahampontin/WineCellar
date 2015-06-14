@@ -67,6 +67,7 @@ namespace WineCellar
         /// session. The state will be null the first time a page is visited.</param>
         private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
+
         }
 
         /// <summary>
@@ -108,7 +109,10 @@ namespace WineCellar
         {
             using (var db = new SQLite.SQLiteConnection(App.DBPath))
             {
-                db.Insert(new WineBottle() {Name = NameTextBox.Text});
+                db.Insert(new WineBottle()
+                {
+                    Name = NameTextBox.Text
+                });
             }
 
         }
